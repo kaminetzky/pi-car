@@ -18,15 +18,20 @@ class Socket:
 
     def stop(self):
         self.client_socket.send('stop'.encode('utf-8'))
+        self.client_socket.recv(1024)
 
     def forward(self):
         self.client_socket.send('forward'.encode('utf-8'))
+        self.client_socket.recv(1024)
 
     def backwards(self):
         self.client_socket.send('backwards'.encode('utf-8'))
+        self.client_socket.recv(1024)
 
     def left(self):
         self.client_socket.send('left'.encode('utf-8'))
+        self.client_socket.recv(1024)
 
     def right(self):
         self.client_socket.send('right'.encode('utf-8'))
+        self.client_socket.recv(1024)

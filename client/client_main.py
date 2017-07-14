@@ -12,6 +12,7 @@ class Widget(QWidget):
         self.show()
         self.socket = Socket(host, port)
         self.connected = False
+        self.pressed_key = ''
 
     def connect(self):
         if self.socket.connect():
@@ -24,17 +25,18 @@ class Widget(QWidget):
     def keyPressEvent(self, QKeyEvent):
         if self.connected:
             text = QKeyEvent.text()
-            methods_dict = {'w': self.socket.forward,
-                            'a': self.socket.left,
-                            's': self.socket.backwards,
-                            'd': self.socket.right}
-            print('text')
-            methods_dict[text]()
+            if text in ['w', 'a', 's', 'd']:
+                self.pressed_key = text
+                methods_dict = {'w': self.socket.forward,
+                                'a': self.socket.left,
+                                's': self.socket.backwards,
+                                'd': self.socket.right}
+                methods_dict[text]()
 
     def keyReleaseEvent(self, QKeyEvent):
         if self.connected:
             text = QKeyEvent.text()
-            if text in ['w', 'a', 's', 'd']:
+            if text == self.pressed_key:
                 print('stop')
                 self.socket.stop()
 

@@ -17,6 +17,7 @@ class Socket:
     def listen(self):
         while True:
             data = self.client_socket.recv(1024)
+            self.client_socket.send('ok'.encode('utf-8'))
             if not data:
                 break
             self.process_request(data.decode('utf-8'))
