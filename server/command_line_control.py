@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
-from motors import Motors
+
+from server.motors import Motors
 
 if __name__ == '__main__':
     motors = Motors()
