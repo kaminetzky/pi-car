@@ -7,7 +7,7 @@ from client_socket import Socket
 class Widget(QWidget):
     def __init__(self, host, port):
         super().__init__()
-        loadUi('client/widget.ui', self)
+        loadUi('widget.ui', self)
         self.connect_button.clicked.connect(self.connect)
         self.show()
         self.socket = Socket(host, port)
@@ -37,7 +37,6 @@ class Widget(QWidget):
         if self.connected:
             text = QKeyEvent.text()
             if text == self.pressed_key:
-                print('stop')
                 self.socket.stop()
 
 

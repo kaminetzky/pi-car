@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from keyboard_control.server.motors import Motors
+from motors import Motors
 
 if __name__ == '__main__':
     Motors()
