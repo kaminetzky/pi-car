@@ -8,7 +8,7 @@ class Movement:
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
-        GPIO.setup([self.motor_pins], GPIO.OUT)
+        GPIO.setup(self.motor_pins, GPIO.OUT)
 
     def forward(self):
         GPIO.output([self.motor_pins[0], self.motor_pins[2]], True)
