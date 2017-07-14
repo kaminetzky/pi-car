@@ -62,7 +62,7 @@ if __name__ == '__main__':
         if command == 'exit':
             break
         letter = command[0]
-        secs = int(command[1:])
+        secs = float(command[1:])
         dict_methods[letter](secs)
 
     GPIO.cleanup()
