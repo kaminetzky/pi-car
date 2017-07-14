@@ -1,20 +1,21 @@
 import RPi.GPIO as GPIO
 import time
 
+
 class Movement:
     def __init__(self):
-        self.motor_pins = [5, 6, 13, 19]
+        self.pins = {'a_1': 5, 'a_2': 6, 'b_2': 13, 'b_1': 19}
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
-        GPIO.setup(self.motor_pins, GPIO.OUT)
+        GPIO.setup(self.pins.values(), GPIO.OUT)
 
     def forward(self):
-        GPIO.output([self.motor_pins[0], self.motor_pins[2]], True)
+        GPIO.output([self.pins['a_1'], self.pins['b_1']], True)
 
     def stop(self):
-        GPIO.output(self.motor_pins, False)
+        GPIO.output(self.pins.values(), False)
 
 
 if __name__ == '__main__':
