@@ -9,13 +9,13 @@ class Movement:
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
 
-        GPIO.setup(self.pins.values(), GPIO.OUT)
+        GPIO.setup(list(self.pins.values()), GPIO.OUT)
 
     def forward(self):
         GPIO.output([self.pins['a_1'], self.pins['b_1']], True)
 
     def stop(self):
-        GPIO.output(self.pins.values(), False)
+        GPIO.output(list(self.pins.values()), False)
 
 
 if __name__ == '__main__':
