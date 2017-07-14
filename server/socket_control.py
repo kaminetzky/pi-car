@@ -1,5 +1,5 @@
 import socket
-import motors
+from motors import Motors
 
 
 class Socket:
@@ -23,11 +23,11 @@ class Socket:
 
     @staticmethod
     def process_request(text):
-        methods_dict = {'stop': motors.stop,
-                        'forward': motors.forward,
-                        'left': motors.left,
-                        'backwards': motors.backwards,
-                        'right': motors.right}
+        methods_dict = {'stop': Motors.stop,
+                        'forward': Motors.forward,
+                        'left': Motors.left,
+                        'backwards': Motors.backwards,
+                        'right': Motors.right}
         methods_dict[text]()
 
 if __name__ == '__main__':
