@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 
-class Movement:
+class Motors:
     def __init__(self):
         self.pins = {'a_1': 5, 'a_2': 6, 'b_2': 13, 'b_1': 19}
 
@@ -49,20 +49,3 @@ class Movement:
         self.right()
         time.sleep(seconds)
         self.stop()
-
-
-if __name__ == '__main__':
-    movement = Movement()
-    dict_methods = {'w': movement.forward_time,
-                    'a': movement.left_time,
-                    's': movement.backwards_time,
-                    'd': movement.right_time}
-    while True:
-        command = input('Ingrese un comando: ')
-        if command == 'exit':
-            break
-        letter = command[0]
-        secs = float(command[1:])
-        dict_methods[letter](secs)
-
-    GPIO.cleanup()
