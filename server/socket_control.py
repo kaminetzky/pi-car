@@ -1,6 +1,6 @@
 import socket
 from motors import Motors
-
+import RPi.GPIO as GPIO
 
 class Socket:
     def __init__(self, host, port):
@@ -11,6 +11,7 @@ class Socket:
         self.socket.bind((host, port))
         self.socket.listen(1)
         self.client_socket = self.socket.accept()[0]
+        Motors()
         self.listen()
 
     def listen(self):
@@ -34,3 +35,4 @@ if __name__ == '__main__':
     host = ''
     port = 50000
     socket = Socket(host, port)
+    GPIO.cleanup()
