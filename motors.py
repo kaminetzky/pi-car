@@ -24,11 +24,11 @@ class Motors:
 
     def left(self):
         self.stop()
-        GPIO.output([self.pins['a_1'], self.pins['b_2']], True)
+        GPIO.output([self.pins['a_2'], self.pins['b_1']], True)
 
     def right(self):
         self.stop()
-        GPIO.output([self.pins['a_2'], self.pins['b_1']], True)
+        GPIO.output([self.pins['a_1'], self.pins['b_2']], True)
 
     def forward_time(self, seconds):
         self.forward()
