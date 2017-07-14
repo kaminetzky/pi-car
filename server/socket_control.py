@@ -1,5 +1,5 @@
 import socket
-#import motors
+import motors
 
 
 class Socket:
@@ -23,8 +23,6 @@ class Socket:
 
     @staticmethod
     def process_request(text):
-        print(text)
-        return
         methods_dict = {'stop': motors.stop,
                         'forward': motors.forward,
                         'left': motors.left,

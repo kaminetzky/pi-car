@@ -40,7 +40,7 @@ class Widget(QWidget):
 
 
 if __name__ == '__main__':
-    host_ = ''
+    host_ = 'raspberrypi'
     port_ = 50000
     app = QApplication(sys.argv)
     widget = Widget(host_, port_)
