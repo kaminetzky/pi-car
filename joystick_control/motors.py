@@ -68,13 +68,13 @@ class Motors:
 
     @staticmethod
     def left_forward(speed=1):
-        Motors.a_en.ChangeDutyCicle(speed * 100)
+        Motors.a_en.ChangeDutyCycle(speed * 100)
         GPIO.output(Motors.pins['a_1'], True)
         GPIO.output(Motors.pins['a_2'], False)
 
     @staticmethod
     def left_backwards(speed=1):
-        Motors.a_en.ChangeDutyCicle(speed * 100)
+        Motors.a_en.ChangeDutyCycle(speed * 100)
         GPIO.output(Motors.pins['a_1'], False)
         GPIO.output(Motors.pins['a_2'], True)
 
@@ -85,13 +85,13 @@ class Motors:
 
     @staticmethod
     def right_forward(speed=1):
-        Motors.b_en.ChangeDutyCicle(speed * 100)
+        Motors.b_en.ChangeDutyCycle(speed * 100)
         GPIO.output(Motors.pins['b_1'], True)
         GPIO.output(Motors.pins['b_2'], False)
 
     @staticmethod
     def right_backwards(speed=1):
-        Motors.b_en.ChangeDutyCicle(speed * 100)
+        Motors.b_en.ChangeDutyCycle(speed * 100)
         GPIO.output(Motors.pins['b_1'], False)
         GPIO.output(Motors.pins['b_2'], True)
 
