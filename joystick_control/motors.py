@@ -15,7 +15,7 @@ class Motors:
         Motors.a_en = GPIO.PWM(Motors.pins['a_en'], 100)
         Motors.b_en = GPIO.PWM(Motors.pins['b_en'], 100)
         Motors.a_en.start(100)
-        Motors.a_en.start(100)
+        Motors.b_en.start(100)
 
     @staticmethod
     def stop():
