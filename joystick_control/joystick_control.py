@@ -14,15 +14,15 @@ while True:
     right = joystick.get_axis(3)
 
     if left > 0:
-        Motors.left_forward()
+        Motors.left_forward(left)
     elif left < 0:
-        Motors.left_backwards()
+        Motors.left_backwards(-left)
     else:
         Motors.left_stop()
     if right > 0:
-        Motors.right_forward()
+        Motors.right_forward(right)
     elif right < 0:
-        Motors.right_backwards()
+        Motors.right_backwards(-right)
     else:
         Motors.right_stop()
 
